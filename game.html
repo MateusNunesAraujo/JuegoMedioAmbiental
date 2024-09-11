@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canecas Ecológicas</title>
+  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="https://unpkg.com/dragula/dist/dragula.min.css">
+</head>
+<body>
+  <div id="puntos">
+    <h2>000</h2>
+  </div>
+  <div id="tiempo">
+      <h2>000</h2>
+  </div>
+  <div class="container">
+    <div class="caneca dropzone" id="plastic">
+      <div class="tapa"></div>
+      <div class="cuerpo">
+        <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
+      </div>
+      <span class="label">Plástico</span>
+    </div>
+    <div class="caneca dropzone" id="glass">
+      <div class="tapa"></div>
+      <div class="cuerpo">
+        <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
+      </div>
+      <span class="label">Vidrio</span>
+    </div>
+    <div class="caneca dropzone" id="organic">
+      <div class="tapa"></div>
+      <div class="cuerpo">
+        <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
+      </div>
+      <span class="label">Orgánico</span>
+    </div>
+    <div class="caneca dropzone" id="paper">
+      <div class="tapa"></div>
+      <div class="cuerpo">
+        <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
+      </div>
+      <span class="label">Papel</span>
+    </div>
+    <div class="caneca dropzone" id="metal">
+      <div class="tapa"></div>
+      <div class="cuerpo">
+        <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
+      </div>
+      <span class="label">Metal</span>
+    </div>
+    <div class="caneca dropzone" id="batteries">
+      <div class="tapa"></div>
+      <div class="cuerpo">
+        <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
+      </div>
+      <span class="label">Baterías</span>
+    </div>
+  </div>
+  <div id="elementos"></div>
+  
+  <script src="https://unpkg.com/dragula/dist/dragula.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  min-height: 100vh;
+  justify-items: center;
+  background-color: #f0f0f0;
+  ;
+}
+
+.container {
+  margin-top: 7rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  width: 90%;
+}
+
+.caneca {
+  position: relative;
+  width: 120px;
+  height: 240px;
+  background-color: #ccc;
+  border-radius: 0 0 20px 20px;
+  transition: transform 0.3s;
+}
+
+.caneca:hover {
+  transform: translateY(-10px);
+}
+
+.cuerpo {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 0 0 20px 20px;
+  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+}
+
+.cuerpo img {
+  height: 75px;
+}
+
+.tapa {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 40px;
+  background-color: #999;
+  border-radius: 50% 50% 0 0;
+  transition: all 0.4s ease;
+}
+
+.caneca:hover .tapa {
+  top: -40px;
+  height: 20px;
+  background-color: rgba(153, 153, 153, 0.8);
+}
+
+.label {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+
+/* Colores de las canecas */
+#plastic .cuerpo {
+  background-color: #00aaff;
+}
+
+#plastic .tapa {
+  background-color: #0077cc;
+}
+
+#glass .cuerpo {
+  background-color: #800080;
+}
+
+#glass .tapa {
+  background-color: #4b0082;
+}
+
+#organic .cuerpo {
+  background-color: #008000;
+}
+
+#organic .tapa {
+  background-color: #006400;
+}
+
+#paper .cuerpo {
+  background-color: #ffdd00;
+}
+
+#paper .tapa {
+  background-color: #ccaa00;
+}
+
+#metal .cuerpo {
+  background-color: #ff3333;
+}
+
+#metal .tapa {
+  background-color: #cc0000;
+}
+
+#batteries .cuerpo {
+  background-color: #666666;
+}
+
+#batteries .tapa {
+  background-color: #4d4d4d;
+}
+
+#content-elementos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#elementos {
+
+  display: flex;
+  /* top: 40%; */
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #006400;
+  align-items: center;
+  justify-content: center;
+}
+
+#puntos {
+  position: absolute;
+  left: 75px;
+  top: 50px;
+  font-size: 28px;
+}
+
+#tiempo {
+  position: absolute;
+  right: 75px;
+  top: 50px;
+  font-size: 28px;
+}
+
+.mostrar {
+  transform: translateY(-50px) !important;
+}
+
+@keyframes desvanecer {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.desaparecer {
+  animation: desvanecer 0.5s forwards;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+    grid-template-rows: 1fr;
+  }
+
+  .container {
+    gap: 30px;
+    margin-top: 1.5rem;
+    align-items: center;
+  }
+
+  .caneca {
+    width: 100px;
+    height: 200px;
+  }
+
+  .tapa {
+    width: 120px;
+    height: 30px;
+  }
+
+  .cuerpo img {
+    height: 50px;
+  }
+
+  .caneca:hover .tapa {
+    top: -30px;
+    height: 15px;
+  }
+
+  .label {
+    font-size: 0.9em;
+  }
+
+  #elementos {
+    height: 150px;
+    position: static;
+    top: 1000px;
+  }
+
+  .mostrar {
+    transform: translateY(-450px);
+  }
+
+  .basura {
+    width: 83px;
+  }
+
+  #puntos {
+  
+    left: 45px;
+    top: 540px;
+  
+  }
+  
+  #tiempo {
+   
+    right: 45px;
+    top: 540px;
+   
+  }
+
+}
+
+@media (max-width: 480px) {
+  .caneca {
+    width: 80px;
+    height: 160px;
+  }
+
+  .tapa {
+    width: 100px;
+    height: 20px;
+  }
+
+  .caneca:hover .tapa {
+    top: -20px;
+    height: 10px;
+  }
+
+  .label {
+    font-size: 0.8em;
+  }
+}
