@@ -97,8 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function actualizar_items(array) {
         clearInterval(cronometro); // Detener el cronómetro anterior
         let numero = Math.floor(Math.random() * array.length);
-        document.querySelector("#elementos").innerHTML = `<img class="basura" src="${array[numero]}" alt="">`;
-
+        document.querySelector("#elementos").innerHTML = `<img class="basura" style="transition: all 0.3s; transform: translateY(850px); " src="${array[numero]}" alt="">`;
+        // Aplicar animación de entrada
+        setTimeout(() => {
+            document.querySelector(".basura").classList.add("mostrar");
+        }, 300);
         iniciarCronometro(); // Iniciar un nuevo cronómetro
     }
 

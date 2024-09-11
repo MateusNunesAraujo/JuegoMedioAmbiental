@@ -5,14 +5,23 @@
 }
 
 body {
+  background: linear-gradient(135deg, #aac0e8, #90b7ee, #6ca1f8);
+  background-size: 400% 400%; /* Para dar efecto de movimiento si es necesario */
+  animation: gradientBackground 15s ease infinite; /* Animación suave del gradiente */
   overflow: hidden;
   font-family: Arial, sans-serif;
   display: grid;
   grid-template-rows: 1fr 1fr;
   min-height: 100vh;
   justify-items: center;
-  background-color: #f0f0f0;
+/*   background-color: #f0f0f0; */
   ;
+}
+
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -144,7 +153,7 @@ body {
   position: relative;
   height: 100%;
   width: 100%;
-  background-color: #006400;
+  background-color: #3d783d;
   align-items: center;
   justify-content: center;
 }
