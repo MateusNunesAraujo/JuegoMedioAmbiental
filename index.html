@@ -8,35 +8,44 @@
   <link rel="stylesheet" href="https://unpkg.com/dragula/dist/dragula.min.css">
 </head>
 <body>
+  <div class="modal">
+    <h1>GAME OVER</h1>
+    <div>
+      <button class="btn"><i class="animation"></i>Ver Resultados<i class="animation"></i>
+      </button>
+  </div>
+  </div>
+  <img id="bien" src="./img/lv-0-20240911100107-unscreen.gif" alt="">
+  <img id="mal" src="./img/lv-0-20240911100742-unscreen.gif" alt="">
   <div id="puntos">
     <h2>000</h2>
   </div>
   <div id="tiempo">
-      <h2>000</h2>
+      <h2 id="cronometro">000</h2>
   </div>
   <div class="container">
-    <div class="caneca dropzone" id="plastic">
+    <div class="caneca dropzone" id="renovable">
       <div class="tapa"></div>
       <div class="cuerpo">
         <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
       </div>
-      <span class="label">Plástico</span>
+      <span class="label">Renovable</span>
     </div>
-    <div class="caneca dropzone" id="glass">
+    <div class="caneca dropzone" id="no_renovable">
       <div class="tapa"></div>
       <div class="cuerpo">
         <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
       </div>
-      <span class="label">Vidrio</span>
+      <span class="label" style="text-align: center;">No renovable</span>
     </div>
-    <div class="caneca dropzone" id="organic">
+    <div class="caneca dropzone" id="organico">
       <div class="tapa"></div>
       <div class="cuerpo">
         <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
       </div>
       <span class="label">Orgánico</span>
     </div>
-    <div class="caneca dropzone" id="paper">
+    <!-- <div class="caneca dropzone" id="paper">
       <div class="tapa"></div>
       <div class="cuerpo">
         <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
@@ -49,14 +58,14 @@
         <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
       </div>
       <span class="label">Metal</span>
-    </div>
-    <div class="caneca dropzone" id="batteries">
+    </div> -->
+   <!--  <div class="caneca dropzone" id="batteries">
       <div class="tapa"></div>
       <div class="cuerpo">
         <img src="./img/signo-de-flechas-triangulares-para-reciclar.png" alt="">
       </div>
       <span class="label">Baterías</span>
-    </div>
+    </div> -->
   </div>
   <div id="elementos"></div>
   

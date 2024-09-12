@@ -6,22 +6,32 @@
 
 body {
   background: linear-gradient(135deg, #aac0e8, #90b7ee, #6ca1f8);
-  background-size: 400% 400%; /* Para dar efecto de movimiento si es necesario */
-  animation: gradientBackground 15s ease infinite; /* Animación suave del gradiente */
+  background-size: 400% 400%;
+  /* Para dar efecto de movimiento si es necesario */
+  animation: gradientBackground 15s ease infinite;
+  /* Animación suave del gradiente */
   overflow: hidden;
   font-family: Arial, sans-serif;
   display: grid;
   grid-template-rows: 1fr 1fr;
   min-height: 100vh;
   justify-items: center;
-/*   background-color: #f0f0f0; */
+  /*   background-color: #f0f0f0; */
   ;
 }
 
 @keyframes gradientBackground {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
@@ -92,30 +102,36 @@ body {
 }
 
 /* Colores de las canecas */
-#plastic .cuerpo {
-  background-color: #00aaff;
+#renovable .cuerpo {
+  background-color: #fff;
 }
 
-#plastic .tapa {
-  background-color: #0077cc;
+#renovable .tapa {
+  background-color: #f0f0f0;
 }
 
-#glass .cuerpo {
-  background-color: #800080;
+#renovable .label {
+  color: #000 !important;
 }
 
-#glass .tapa {
-  background-color: #4b0082;
+#no_renovable .cuerpo {
+  background-color: #121010;
+  ;
 }
 
-#organic .cuerpo {
+#no_renovable .tapa {
+  background-color: #1c1b1b;
+}
+
+#organico .cuerpo {
   background-color: #008000;
 }
 
-#organic .tapa {
+#organico .tapa {
   background-color: #006400;
 }
 
+/* 
 #paper .cuerpo {
   background-color: #ffdd00;
 }
@@ -138,7 +154,7 @@ body {
 
 #batteries .tapa {
   background-color: #4d4d4d;
-}
+} */
 
 #content-elementos {
   display: flex;
@@ -158,7 +174,12 @@ body {
   justify-content: center;
 }
 
+.basura{
+width: 150px;
+}
+
 #puntos {
+ 
   position: absolute;
   left: 75px;
   top: 50px;
@@ -172,8 +193,98 @@ body {
   font-size: 28px;
 }
 
+#bien {
+  z-index: 10;
+  transition: 0.3s all;
+  position: fixed;
+  top: -1000px;
+  height: 180px;
+}
+
+#mal {
+  z-index: 10;
+  transition: 0.3s all;
+  position: fixed;
+  top: -1000px;
+  height: 180px;
+}
+
+.mostrar_mensajes{
+  top: -25px !important;
+}
+
 .mostrar {
   transform: translateY(-50px) !important;
+}
+
+.modal{
+  text-align: center;
+  font-size: 42px;
+  background-color: #080505ed;
+  color: #fff;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #080505ed;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+  --transform: translateY(0);
+}
+
+/* From Uiverse.io by mi-series */ 
+.btn {
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #40B3A2;
+  min-width: 200px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: .95;
+}
+
+.btn .animation {
+  border-radius: 100%;
+  animation: ripple 0.6s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
 }
 
 @keyframes desvanecer {
@@ -181,6 +292,7 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(0.5);
@@ -199,7 +311,7 @@ body {
   }
 
   .container {
-    gap: 30px;
+    gap: 25px;
     margin-top: 1.5rem;
     align-items: center;
   }
@@ -242,30 +354,34 @@ body {
   }
 
   #puntos {
-  
+
     left: 45px;
     top: 540px;
-  
+
   }
-  
+
   #tiempo {
-   
+
     right: 45px;
     top: 540px;
-   
+
   }
 
 }
 
 @media (max-width: 480px) {
   .caneca {
-    width: 80px;
-    height: 160px;
+    width: 95px;
+    height: 180px;
+    /*  width: 80px;
+    height: 160px; */
   }
 
   .tapa {
-    width: 100px;
-    height: 20px;
+    width: 120px;
+    height: 30px;
+    /* width: 100px;
+    height: 20px; */
   }
 
   .caneca:hover .tapa {
