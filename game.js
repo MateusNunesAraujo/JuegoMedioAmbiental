@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     drake.on('drop', (el, target, source) => {
         rondas += 1
-        if (rondas == 20) {
+        if (rondas == 13) {
             document.querySelector(".modal").classList.add("modal--show")
             juegoTerminado = true
             iniciarCronometro()
